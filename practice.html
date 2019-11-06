@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js练习</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		td {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<table id = "mutiply_table"></table>
+	<script type="text/javascript">
+		//从1到100，输出，3的倍数或含有3输出PA
+		function outputThree(){
+			var patt = /3/;
+			for (var i = 1; i <= 100; i++) {
+				if (i % 3 == 0 || patt.test(i)) {
+					console.log("PA");
+				}else {
+					console.log(i);
+				}
+			}
+		}
+		function outputTable() {
+			let table = document.getElementById("mutiply_table");
+			for (var i = 1; i <= 9; i++) {
+				let tr = document.createElement("tr");
+				table.appendChild(tr);
+				for (var j = 1 ; j <= i; j++) {
+					let td = document.createElement("td");
+					td.textContent = j + "*" + i + "=" + j*i;
+					tr.appendChild(td);
+				}
+				
+			}
+		}
+		outputTable();
+		</script>
+</body>
+</html>
